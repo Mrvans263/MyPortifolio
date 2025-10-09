@@ -12,7 +12,7 @@ const Home = () => {
             I am a First Year student of <strong>Mechatronics and Robotics</strong> at RTU MIREA  
             <strong> (Russian Technological University) </strong> in Moscow, Russia. I am passionate about about using technology to solve real-world problems and create innovative solutions.
           </p>
-          <a href="#projects" className="btn">View My Work</a>
+          <a href="/projects" className="btn">View My Work</a>
         </div>
 
         <div className="home-image">
