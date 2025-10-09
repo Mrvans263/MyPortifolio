@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { BrowserRouter, Routes, Route} from "react-router-dom" ;
-import Navbar from '../common/navbar' ;
-import Home from '../pages/home' ;
+import Navbar from '../common/Navbar' ;
+import Home from '../pages/Home' ;
 import About from '../pages/About' ;
 import ProjectsAndSkills from '../pages/ProjectsAndSkills';
 import Contact from '../pages/Contact' ;
