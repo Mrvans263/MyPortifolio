@@ -10,8 +10,8 @@ const Home = () => {
         <div className="home-text">
           <h1>Hello, I'm <span>Evans Chauke</span></h1>
           <p>
-            I am a First Year student of <strong>Mechatronics and Robotics</strong> at RTU MIREA  
-            <strong> (Russian Technological University) </strong> in Moscow, Russia. I am passionate about about using technology to solve real-world problems and create innovative solutions.
+            I am a  student of <strong>Mechatronics and Robotics</strong> at RTU MIREA  
+            <strong> (Russian Technological University) </strong> in Moscow, Russia. I am passionate about about using technology to solve real-world problems.
           </p>
           <Link to="/projects" className="btn">View My Work</Link>
         </div>
