@@ -1,52 +1,98 @@
-import React from "react";
-import { Helmet } from "react-helmet";
+import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async"; // Switch to async version
 import "./Home.css";
-import picture from "./picture.jpg";
 import { Link } from "react-router-dom";
 
 export default function Home() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  
   return (
     <>
       <Helmet>
-        <title>Home | Evans Chauke</title>
+        <title>Evans Chauke | Mechatronics & Robotics Student</title>
         <meta
           name="description"
-          content="Welcome to the portfolio of Evans Chauke — Mechatronics & Robotics student at RTU MIREA. Explore engineering projects, robotics, and software development."
+          content="First-year Mechatronics & Robotics student at RTU MIREA Moscow. Passionate about robotics, engineering innovation, and software development."
         />
-        <meta property="og:title" content="Evans Chauke Portfolio" />
-        <meta
-          property="og:description"
-          content="Explore projects and skills of Evans Chauke, Mechatronics & Robotics student at RTU MIREA."
-        />
-        <meta
-          property="og:image"
-          content="https://mrvans.vercel.app/preview.jpg"
-        />
-        <meta property="og:url" content="https://mrvans.vercel.app" />
+        <link rel="preload" as="image" href="/picture.jpg?w=400" />
       </Helmet>
 
       <section className="home">
         <div className="home-content">
-
           <div className="home-text">
-            <h1>
-              Hello, I'm <span>Evans Chauke</span>
+            <h1 className="heading-animate">
+              Innovating the Future with{" "}
+              <span className="gradient-text">Robotics & AI</span>
             </h1>
-            <p>
-              I am a first-year student of <strong>Mechatronics and Robotics</strong> at
-              RTU MIREA (Russian Technological University) in Moscow. I am
-              passionate about using technology to solve real-world problems and
-              create innovative engineering solutions.
+            
+            <div className="role-tags">
+              <span className="tag">🤖 Robotics Engineer</span>
+              <span className="tag">⚙️ Mechatronics Student</span>
+              <span className="tag">💻 Software Developer</span>
+            </div>
+            
+            <p className="intro-text">
+              First-year <strong>Mechatronics & Robotics</strong> student at RTU MIREA in Moscow.
+              Passionate about bridging hardware and software to create innovative engineering
+              solutions that solve real-world problems.
             </p>
-            <Link to="/projects" className="btn">
-              View My Work
-            </Link>
+            
+            <div className="stats">
+              <div className="stat">
+                <div className="stat-number">5+</div>
+                <div className="stat-label">Projects</div>
+              </div>
+              <div className="stat">
+                <div className="stat-number">2</div>
+                <div className="stat-label">Technologies</div>
+              </div>
+              <div className="stat">
+                <div className="stat-number">100%</div>
+                <div className="stat-label">Passionate</div>
+              </div>
+            </div>
+            
+            <div className="cta-buttons">
+              <Link to="/projects" className="btn btn-primary">
+                <span className="btn-icon">🚀</span>
+                View My Projects
+              </Link>
+              <a href="#contact" className="btn btn-secondary">
+                <span className="btn-icon">📧</span>
+                Get In Touch
+              </a>
+            </div>
+            
+            <div className="scroll-hint">
+              <div className="mouse">
+                <div className="wheel"></div>
+              </div>
+              <span>Scroll to explore</span>
+            </div>
           </div>
 
           <div className="home-image">
-            <img src={picture} alt="Portrait of Evans Chauke" />
+            <div className={`image-wrapper ${imageLoaded ? 'loaded' : ''}`}>
+              <img
+                src="/picture.jpg?w=400"
+                alt="Evans Chauke - Mechatronics & Robotics Student"
+                loading="lazy"
+                onLoad={() => setImageLoaded(true)}
+                className="profile-image"
+              />
+              <div className="image-overlay"></div>
+              <div className="tech-badge">
+                <span className="badge-icon">🤖</span>
+                <span>RTU MIREA</span>
+              </div>
+            </div>
+            
+            <div className="floating-elements">
+              <div className="floating-element">⚙️</div>
+              <div className="floating-element">🔧</div>
+              <div className="floating-element">💡</div>
+            </div>
           </div>
-
         </div>
       </section>
     </>
