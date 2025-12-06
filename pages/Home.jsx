@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet-async"; // Switch to async version
+import { Helmet } from "react-helmet"; // Switch to async version
 import "./Home.css";
 import { Link } from "react-router-dom";
 
