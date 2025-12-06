@@ -74,7 +74,7 @@ export default function Home() {
           <div className="home-image">
             <div className={`image-wrapper ${imageLoaded ? 'loaded' : ''}`}>
               <img
-                src="/picture.jpg?w=400"
+                src="picture.jpg"
                 alt="Evans Chauke - Mechatronics & Robotics Student"
                 loading="lazy"
                 onLoad={() => setImageLoaded(true)}
